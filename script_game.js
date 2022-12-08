@@ -1,33 +1,31 @@
-const computerSelection = getComputerChoice();
-
-
-
-
 function getComputerChoice(){
-    return 'бумага';
+    let arr = ['камень', 'ножницы', 'бумага'];
+    let randomArr = arr[parseInt((Math.floor(Math.random() * (arr.lentgh))))];
+    console.log(parseInt((Math.floor(Math.random() * (arr.lentgh)))));
+    return randomArr;
 }
 
 function playRound(playerSelection, computerSelection){
-    if(playerSelection == 'камень' && computerSelection == 'бумага'){
+    if(playerSelection === 'камень' && computerSelection === 'бумага'){
        alert('Выйграл компьютер'); 
-       console.log('k b');
     }
-    else if(playerSelection == 'камень' && computerSelection == 'ножницы'){
+    else if(playerSelection === 'камень' && computerSelection === 'ножницы'){
         alert('Вы выйграли');
-        console.log('k n');
     }
-    else if(playerSelection == 'бумага' && computerSelection == 'ножницы'){
+    else if(playerSelection === 'бумага' && computerSelection === 'ножницы'){
         alert('Выйграл компьютер');
-        console.log('b n');
     }
-    else if(playerSelection == 'бумага' && computerSelection == 'камень'){
+    else if(playerSelection === 'бумага' && computerSelection === 'камень'){
         alert('Вы выйграли');
     }
-    else if(playerSelection == 'ножницы' && computerSelection == 'бумага'){
+    else if(playerSelection === 'ножницы' && computerSelection === 'бумага'){
         alert('Вы выйграли');
     }
-    else if(playerSelection == 'ножницы' && computerSelection == 'камень'){
+    else if(playerSelection === 'ножницы' && computerSelection === 'камень'){
         alert('Выйграл компьютер');
+    }
+    else if((playerSelection === 'камень' && computerSelection === 'камень') || (playerSelection === 'ножницы' && computerSelection === 'ножницы') || (playerSelection === 'бумага' && computerSelection === 'бумага')){
+        alert('Ничья');
     }
     else{
         alert('Произошла ошибка');
@@ -36,6 +34,7 @@ function playRound(playerSelection, computerSelection){
 
 function game(){
     for (let i = 0; i < 5; i++) {
+        const computerSelection = getComputerChoice();
         const playerSelection = prompt('Введите камень,ножницы или бумага');
         playRound(playerSelection, computerSelection);
     }
@@ -43,3 +42,4 @@ function game(){
 }
 game();
 console.log('end');
+console.log(getComputerChoice());
