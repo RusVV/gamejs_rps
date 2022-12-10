@@ -1,8 +1,8 @@
 function getComputerChoice(){
-    let arr = ['камень', 'ножницы', 'бумага'];
-    let randomArr = arr[parseInt((Math.floor(Math.random() * (arr.lentgh))))];
-    console.log(parseInt((Math.floor(Math.random() * (arr.lentgh)))));
-    return randomArr;
+    let arr = new Array ('камень', 'ножницы', 'бумага');
+    let randomInd=Math.floor(Math.random() * (2 - 0 + 1)) + 0;
+    //console.log(arr[randomInd]);
+    return arr[randomInd];
 }
 
 function playRound(playerSelection, computerSelection){
@@ -42,4 +42,3 @@ function game(){
 }
 game();
 console.log('end');
-console.log(getComputerChoice());
