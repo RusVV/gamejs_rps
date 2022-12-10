@@ -6,26 +6,43 @@ function getComputerChoice(){
 }
 
 function playRound(playerSelection, computerSelection){
+    let answer = document.querySelector('.answer');
+    let inp = document.querySelector('.inp');
+    //console.log(answer);
     if(playerSelection === 'камень' && computerSelection === 'бумага'){
-       alert('Выйграл компьютер'); 
+        answer.innerText = 'Выйграл компьютер';
+        answer.style.color="red";
+        inp.value = "";
     }
     else if(playerSelection === 'камень' && computerSelection === 'ножницы'){
-        alert('Вы выйграли');
+        answer.innerText = 'Выйграл игрок';
+        answer.style.color="green";
+        inp.value = "";
     }
     else if(playerSelection === 'бумага' && computerSelection === 'ножницы'){
-        alert('Выйграл компьютер');
+        answer.innerText = 'Выйграл компьютер';
+        answer.style.color="red";
+        inp.value = ""; 
     }
     else if(playerSelection === 'бумага' && computerSelection === 'камень'){
-        alert('Вы выйграли');
+        answer.innerText = 'Выйграл игрок';
+        answer.style.color="green";
+        inp.value = ""; 
     }
     else if(playerSelection === 'ножницы' && computerSelection === 'бумага'){
-        alert('Вы выйграли');
+        answer.innerText = 'Выйграл игрок';
+        answer.style.color="green";
+        inp.value = ""; 
     }
     else if(playerSelection === 'ножницы' && computerSelection === 'камень'){
-        alert('Выйграл компьютер');
+        answer.innerText = 'Выйграл компьютер';
+        answer.style.color="red";
+        inp.value = ""; 
     }
     else if((playerSelection === 'камень' && computerSelection === 'камень') || (playerSelection === 'ножницы' && computerSelection === 'ножницы') || (playerSelection === 'бумага' && computerSelection === 'бумага')){
-        alert('Ничья');
+        answer.innerText = 'Ничья';
+        answer.style.color="black";
+        inp.value = ""; 
     }
     else{
         alert('Произошла ошибка');
@@ -33,12 +50,13 @@ function playRound(playerSelection, computerSelection){
 }
 
 function game(){
-    for (let i = 0; i < 5; i++) {
-        const computerSelection = getComputerChoice();
-        const playerSelection = prompt('Введите камень,ножницы или бумага');
+        let computerSelection = getComputerChoice();
+        let playerSelection = document.querySelector('.inp').value;
+        //console.log(playerSelection);
+        //console.log(computerSelection);
         playRound(playerSelection, computerSelection);
-    }
-
+         
 }
-game();
+
+//game();
 console.log('end');
