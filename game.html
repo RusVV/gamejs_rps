@@ -11,8 +11,10 @@
 <body>
     <h1>Традиционная игра "Камень-Ножницы-Бумага"</h1>
     
-    <label for="field_inp">Введите один из вариантов</label>
+    <label class="lbl" for="field_inp">Введите один из вариантов</label>
     <input class="inp" id="field_inp" type="text" placeholder=" камень">
-    <button class="btn">Играть</button>
+    <button onclick="game()" class="btn">Играть</button>
+
+    <div class="answer"></div>
 </body>
 </html>
